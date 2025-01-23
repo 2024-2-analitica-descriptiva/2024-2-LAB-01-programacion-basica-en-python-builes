@@ -6,6 +6,9 @@ utilizar pandas, numpy o scipy.
 """
 
 
+# Ruta del archivo relativa al archivo actual
+relative_path = "../files/input/data.csv"
+
 def pregunta_04():
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la
@@ -26,3 +29,19 @@ def pregunta_04():
      ('12', 3)]
 
     """
+
+    with open(relative_path, "r") as file:
+        # Leemos todas las líneas del archivo
+        data = file.readlines()
+
+        d = {}
+
+        # Iteramos sobre cada línea para extraer la segunda columna y sumarla
+        for line in data:
+            # Separamos las columnas por comas
+            column = line.strip().split(",")[0].split("\t")
+            month = column[2].split("-")[1]
+            d[month] = d.get(month, 0) + 1
+        return sorted(d.items())
+
+print(pregunta_04())

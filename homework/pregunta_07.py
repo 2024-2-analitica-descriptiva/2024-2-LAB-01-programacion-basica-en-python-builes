@@ -5,6 +5,8 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
+# Ruta del archivo relativa al archivo actual
+relative_path = "../files/input/data.csv"
 
 def pregunta_07():
     """
@@ -25,3 +27,34 @@ def pregunta_07():
      (9, ['A', 'B', 'E', 'A', 'A', 'C'])]
 
     """
+
+    resultado = []
+    
+    # Leemos el archivo data.csv
+    with open(relative_path, 'r') as f:
+        # Saltamos el encabezado
+        next(f)
+        
+        # Creamos un diccionario para almacenar las letras asociadas a cada valor de la columna 2
+        asociacion = {}
+        
+        # Iteramos sobre cada línea del archivo
+        for line in f:
+            columnas = line.strip().split('\t')
+            
+            # Extraemos las columnas 1 y 2
+            letras = columnas[0]
+            valor_columna_2 = int(columnas[1])  # Convertimos el valor de la columna 2 a entero
+            
+            # Si el valor de la columna 2 ya está en el diccionario, agregamos las letras
+            if valor_columna_2 not in asociacion:
+                asociacion[valor_columna_2] = []
+            asociacion[valor_columna_2].append(letras)
+        
+        # Convertimos el diccionario a una lista de tuplas
+        for key in sorted(asociacion.keys()):
+            resultado.append((key, asociacion[key]))
+    
+    return resultado
+
+print(pregunta_07())
