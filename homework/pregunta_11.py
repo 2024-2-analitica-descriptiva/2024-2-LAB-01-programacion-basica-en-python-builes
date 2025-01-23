@@ -5,6 +5,7 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
+path = "../files/input/data.csv"
 
 def pregunta_11():
     """
@@ -16,3 +17,6 @@ def pregunta_11():
 
 
     """
+
+
+
