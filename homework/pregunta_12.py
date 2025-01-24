@@ -16,3 +16,24 @@ def pregunta_12():
     {'A': 177, 'B': 187, 'C': 114, 'D': 136, 'E': 324}
 
     """
+
+    dic = {}
+
+    with open(path, "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            number = 0
+            cols = line.split("\t")
+            key = cols[0]
+            value = cols[4].split(",")
+            for row in value:
+                n = int(row.split(":")[1])
+                number += n
+            dic[key] = dic.get(key, 0) + number
+        
+        return dic
+
+
+
+print(pregunta_12())
+

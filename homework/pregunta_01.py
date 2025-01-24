@@ -1,4 +1,4 @@
-
+import os
 
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
@@ -8,7 +8,7 @@ utilizar pandas, numpy o scipy.
 """
 
 # Ruta del archivo relativa al archivo actual
-relative_path = "../files/input/data.csv"
+relative_path = "files/input/data.csv"
 
 def pregunta_01():
     """
