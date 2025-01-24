@@ -8,7 +8,7 @@ utilizar pandas, numpy o scipy.
 """
 
 # Ruta del archivo relativa al archivo actual
-relative_path = "../files/input/data.csv"
+relative_path = "files/input/data.csv"
 
 def pregunta_06():
     """

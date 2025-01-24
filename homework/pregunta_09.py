@@ -7,7 +7,7 @@ utilizar pandas, numpy o scipy.
 
 
 
-path = "../files/input/data.csv"
+path = "files/input/data.csv"
 
 def pregunta_09():
     """
