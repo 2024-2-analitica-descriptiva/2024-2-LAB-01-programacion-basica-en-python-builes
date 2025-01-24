@@ -32,5 +32,5 @@ def pregunta_02():
             current = column[0]
 
             d[current] = d.get(current, 0) + 1
-        return d
+        return sorted(d.items())
 print(pregunta_02())

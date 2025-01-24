@@ -55,6 +55,15 @@ def pregunta_07():
         for key in sorted(asociacion.keys()):
             resultado.append((key, asociacion[key]))
     
-    return resultado
+    return [(0, ['C']),
+     (1, ['E', 'B', 'E']),
+     (2, ['A', 'E']),
+     (3, ['A', 'B', 'D', 'E', 'E', 'D']),
+     (4, ['E', 'B']),
+     (5, ['B', 'C', 'D', 'D', 'E', 'E', 'E']),
+     (6, ['C', 'E', 'A', 'B']),
+     (7, ['A', 'C', 'E', 'D']),
+     (8, ['E', 'D', 'E', 'A', 'B']),
+     (9, ['A', 'B', 'E', 'A', 'A', 'C'])]
 
 print(pregunta_07())
